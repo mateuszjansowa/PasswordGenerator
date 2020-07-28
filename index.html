@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator | Mateusz Sowa</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <!-- My styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="www.github.com"><img src="img/logoBig.png" alt="Big logo"></a>
+        </nav>
+        <h1>Generate your password</h1>
+        <h2>Password generator tool - create your secure and totally random password <span>within seconds</span></h2>
+    </header>
+
+
+    <label class="switch-random">
+        <input type="checkbox">
+        <span class="slider">
+            <p>Totally randomize</p>
+        </span>
+    </label>
+
+    <section class="customize">
+        <h3>Create your unique combination</h3>
+        <div class="settings-amount">
+            <p>How many characters?</p>
+            <input type="range" min='2' , max='30' , value='8' , class="bar-slider">
+            <p>Characters: <span>8</span></p>
+        </div>
+
+        <div class="settings-others">
+
+            <label class="switch-random small uppercase">
+                <input type="checkbox">
+                <span class="slider uppercase" id='uppercase'>
+                    <p>Uppercase</p>
+                </span>
+            </label>
+
+            <label class="switch-random small lowercase">
+                <input type="checkbox">
+                <span class="slider lowercase" id='lowercase'>
+                    <p>Lowercase</p>
+                </span>
+            </label>
+
+            <label class="switch-random small">
+                <input type="checkbox">
+                <span class="slider numbers" id='numbers'>
+                    <p>Numbers</p>
+                </span>
+            </label>
+
+            <label class="switch-random small">
+                <input type="checkbox">
+                <span class="slider allmixed" id='allmixed'>
+                    <p>All mixed</p>
+                </span>
+            </label>
+
+        </div>
+
+    </section>
+
+    <button class="generate">
+        <p>Generate</p>
+    </button>
+
+    <section class="password">
+        <span></span>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

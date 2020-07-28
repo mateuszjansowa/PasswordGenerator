@@ -1,0 +1,533 @@
+/* Fonts */
+/* font-family: 'Roboto', sans-serif;
+font-family: 'Share Tech Mono', monospace; */
+
+/* Adobe Color */
+/* Main black: #000000
+Main white: #FFFFFF
+Secondary yellow/orange: #FABE23
+Secondary bottle green: #10523C
+Additional purple: #4A1057 */
+
+/* JS classes */
+
+.hide {
+    display: none !important;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: 'Share Tech mono', monospace;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    justify-content: center;
+    align-content: center;
+}
+
+nav a {
+    align-self: flex-end;
+    margin-right: 20px;
+}
+
+nav a img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+h1,
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+h1 {
+    margin: 50px 0px 0px 0px;
+}
+
+h2 {
+    margin: 20px 0px;
+    font-size: 1.2rem;
+    padding: 0px 20px;
+}
+
+h2 span {
+    color: #4A1057;
+    font-weight: bolder;
+}
+
+
+label.switch-random {
+    width: 300px;
+    align-self: center;
+}
+
+label.switch-random small {
+    width: 200px;
+    align-self: left;
+}
+
+.switch-random {
+    --switch-width: 80px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+/* delete checkbox */
+.switch-random input {
+    height: 0;
+    width: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    width: var(--switch-width);
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    transition: .4s;
+}
+
+.switch-random.small .slider {
+    width: calc(var(--switch-width));
+    height: 30px;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+    border: 2px solid #FABE23;
+    transition: .4s;
+}
+
+.switch-random.small .slider:before {
+    border-radius: 50%;
+    height: 26px;
+    width: 30px;
+}
+
+.slider.allmixed p {
+    font-weight: bold;
+}
+
+input:checked+.slider {
+    background-color: #FABE23;
+}
+
+input:checked+.slider:before {
+    transform: translateX(calc(var(--switch-width) / 2));
+}
+
+.switch-random.small input:checked+.slider:before {
+    transform: translateX(50px);
+}
+
+.switch-random p {
+    position: absolute;
+    width: 200px;
+    left: 100%;
+    top: 50%;
+    color: black;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    margin-left: 20px;
+    transition: .4s;
+}
+
+label.switch-random.small p {
+    width: 180px;
+    font-size: 1.0rem;
+}
+
+
+.customize {
+    display: grid;
+    margin: 10px 0px 15px 0px;
+    align-self: center;
+    width: 80%;
+    max-width: 1024px;
+    height: 40vh;
+    min-height: 360px;
+    box-shadow: 0px 0px 10px 0px black;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 8fr;
+    grid-template-areas: "text text"
+        "settings-amount settings-others";
+
+    transform: scale(1.0);
+    transition: .4s;
+}
+
+.customize h3 {
+    grid-area: text;
+    justify-self: center;
+    margin: 20px;
+    font-size: 1.4rem;
+}
+
+/* Amount settings */
+.settings-amount {
+    grid-area: settings-amount;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 10px;
+}
+
+.settings-amount p {
+    margin: 10px;
+}
+
+.settings-amount p>span {
+    padding: 5px 20px;
+    border: 1px solid black;
+}
+
+/* Bar slider customization - reset */
+input[type=range] {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 60px;
+    background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #FABE23;
+    cursor: pointer;
+    margin-top: -10px;
+    /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: black;
+    border-radius: 1.3px;
+    transition: .4s;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: black;
+    box-shadow: 0px 0px 10px black;
+}
+
+.settings-others {
+    max-width: 80%;
+    margin: auto;
+}
+
+.generate {
+    position: relative;
+    margin: 5px auto 15px auto;
+    text-align: center;
+    padding: 10px 40px;
+    font-size: 2.0rem;
+    font-family: 'roboto', sans-serif;
+    text-transform: uppercase;
+    background-color: #FABE23;
+    border: 1px solid black;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.generate:hover {
+    padding: 10px 80px;
+}
+
+.generate:hover::before {
+    transform: translateY(0%);
+}
+
+.generate:hover::after {
+    transform: translateY(0%);
+}
+
+
+.generate::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform: translateY(-110%);
+    transition: .6s;
+}
+
+.generate::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform: translateY(110%);
+    transition: .6s;
+}
+
+section.password {
+    width: 80%;
+    max-width: 1024px;
+    height: 10vh;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px 0px black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+section.password span {
+    font-size: 3.0rem;
+
+    color: black;
+}
+
+/* Media queries max width */
+@media(max-width:991.98px) {
+    body {
+        margin: 0 auto;
+    }
+
+    nav {
+        height: 60px;
+
+    }
+
+    nav a {
+        align-self: flex-end;
+        margin-right: 20px;
+    }
+
+    nav a img {
+        width: 50px;
+        height: 50px;
+        border: none;
+    }
+
+    h1,
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h1 {
+        margin: 30px 0px 0px 0px;
+    }
+
+    h2 {
+        margin: 20px 0px;
+        font-size: 1.0rem;
+    }
+
+    label.switch-random {
+        max-width: 200px;
+    }
+
+    label.switch-random small {
+        max-width: 200px;
+    }
+
+    .switch-random {
+        --switch-width: 60px;
+        height: 20px;
+        position: relative;
+        display: flex;
+        margin-bottom: 20px;
+        margin-left: 0px;
+    }
+
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        width: var(--switch-width);
+        border-radius: 20px;
+    }
+
+    .switch-random.small .slider {
+        width: calc(var(--switch-width));
+        height: 30px;
+        border-radius: 20px;
+    }
+
+    .slider:before {
+
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+
+    }
+
+
+    input:checked+.slider:before {
+        transform: translateX(40px);
+    }
+
+    .switch-random.small input:checked+.slider:before {
+        transform: translateX(26px);
+    }
+
+    .switch-random p {
+        display: block;
+    }
+
+    .customize {
+        display: grid;
+        align-self: center;
+        justify-content: center;
+        width: 90%;
+        min-height: 80vh;
+        min-height: 460px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 4fr 8fr;
+        grid-template-areas: "text"
+            "settings-amount"
+            "settings-others";
+
+    }
+
+    .customize h3 {
+        text-align: center;
+        margin: 10px;
+        font-size: 1.3rem;
+    }
+
+    /* Amount settings */
+    .settings-amount {
+        grid-area: settings-amount;
+        width: 80%;
+        font-size: 1.2rem;
+
+    }
+
+    .settings-amount p {
+        margin: 5px;
+    }
+
+    .settings-amount p>span {
+        padding: 5px 20px;
+        border: 1px solid black;
+    }
+
+    /* Bar slider customization - reset */
+    input[type=range] {
+        -webkit-appearance: none;
+        width: 90%;
+        height: 50px;
+        background: transparent;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+
+    input[type=range]:focus {
+        outline: none;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #FABE23;
+        cursor: pointer;
+        margin-top: -5px;
+        /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 10px;
+        cursor: pointer;
+        background: black;
+        border-radius: 1.3px;
+        transition: .4s;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: black;
+        box-shadow: 0px 0px 10px black;
+    }
+
+    .settings-others {
+        padding: 0px;
+        margin: auto;
+    }
+
+    .generate {
+        border: 2px solid black;
+    }
+
+    .generate:hover {
+        padding: 10px 80px;
+    }
+
+    section.password {
+        width: 90%;
+        height: 10vh;
+        min-height: 50px;
+        margin: 10px auto;
+    }
+
+    section.password span {
+        font-size: 1.1rem;
+        color: black;
+    }
+}
