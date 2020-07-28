@@ -55,6 +55,8 @@ const generatePassword = () => {
 //Event listeners
 switchCustomization.addEventListener('click', hideCustomization);
 slider.addEventListener('click', showNumber);
+slider.addEventListener('touchend', showNumber);
+
 uppercaseSwitch.addEventListener('click', (event) => {
     uppercaseSwitch.classList.toggle('active');
     if (uppercaseSwitch.classList.contains('active')) {
