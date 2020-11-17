@@ -1,5 +1,7 @@
 # PasswordGenerator
 Hello at the readme of my **first functional JavaScript programming** mini-project :fire: :fire: :fire:
+## Live Deployment:
+https://mateuszjansowa.github.io/PasswordGenerator/
 
 It is a simple and clean looking **Password Generator**. 
 
